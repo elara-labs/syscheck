@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="pulse" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#22d3ee"/>
+      <stop offset="50%" style="stop-color:#34d399"/>
+      <stop offset="100%" style="stop-color:#22d3ee"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#bg)"/>
+  <!-- Terminal frame -->
+  <rect x="30" y="45" width="140" height="110" rx="8" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+  <!-- Title bar dots -->
+  <circle cx="45" cy="57" r="4" fill="#ef4444"/>
+  <circle cx="58" cy="57" r="4" fill="#eab308"/>
+  <circle cx="71" cy="57" r="4" fill="#22c55e"/>
+  <!-- Heartbeat line -->
+  <polyline points="42,105 55,105 62,105 68,85 74,120 80,95 86,110 92,100 98,105 110,105 125,105 135,105 145,105 158,105"
+            fill="none" stroke="url(#pulse)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+  <!-- Code lines -->
+  <rect x="42" y="68" width="45" height="4" rx="2" fill="#22d3ee" opacity="0.6"/>
+  <rect x="92" y="68" width="25" height="4" rx="2" fill="#34d399" opacity="0.4"/>
+  <rect x="42" y="78" width="30" height="4" rx="2" fill="#a78bfa" opacity="0.5"/>
+  <rect x="77" y="78" width="50" height="4" rx="2" fill="#94a3b8" opacity="0.3"/>
+  <!-- Bottom bars -->
+  <rect x="42" y="120" width="55" height="4" rx="2" fill="#fb923c" opacity="0.5"/>
+  <rect x="42" y="130" width="35" height="4" rx="2" fill="#34d399" opacity="0.4"/>
+  <rect x="82" y="130" width="40" height="4" rx="2" fill="#94a3b8" opacity="0.3"/>
+  <!-- Bottom text -->
+  <text x="100" y="182" text-anchor="middle" fill="#94a3b8" font-family="SF Mono, Monaco, monospace" font-size="13" font-weight="600" letter-spacing="3">SYSCHECK</text>
+</svg>
