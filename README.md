@@ -17,12 +17,6 @@
 
 <br/>
 
-<p align="center">
-  <img src="assets/screenshot.svg" alt="syscheck output" width="680"/>
-</p>
-
-<br/>
-
 ## Why
 
 You open your laptop. The fans spin up. Something is eating CPU. Something else grabbed a port you need. An LLM is chewing through your RAM. You don't want to run five different commands to figure it out.
