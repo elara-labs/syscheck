@@ -113,21 +113,10 @@ format_bytes() {
 uptime_str=$(uptime | sed 's/.*up //' | sed 's/,  *[0-9]* user.*//')
 chip=$(sysctl -n machdep.cpu.brand_string 2>/dev/null || echo "Unknown")
 
-# ── ASCII Art Header ─────────────────────────────
-info_line="${chip} · $(date '+%b %d %H:%M') · up ${uptime_str}"
-# Pad info line to fixed width for box alignment
-info_padded=$(printf "%-57s" "$info_line")
-
+# ── Header ───────────────────────────────────────
 echo ""
-echo -e "  ${D}┌───────────────────────────────────────────────────────────┐${N}"
-echo -e "  ${D}│${N}   ${B} ___  _  _  ___   ___  _  _  ___   ___  _  __${N}           ${D}│${N}"
-echo -e "  ${D}│${N}   ${B}/ __|| || |/ __| / __|| || || __| / __|| |/ /${N}           ${D}│${N}"
-echo -e "  ${D}│${N}   ${B}\\__ \\|_  _|\\__ \\| (__ |  __|| _| | (__ |   <${N}            ${D}│${N}"
-echo -e "  ${D}│${N}   ${B}|___/  |_| |___/ \\___||_|  |___| \\___||_|\\\\_\\\\${N}           ${D}│${N}"
-echo -e "  ${D}│${N}                                                           ${D}│${N}"
-echo -e "  ${D}│${N}   ${D}${info_padded}${N}${D}│${N}"
-echo -e "  ${D}└───────────────────────────────────────────────────────────┘${N}"
-echo ""
+echo -e "  ${B}⚡ syscheck${N}  ${D}${chip} · $(date '+%b %d %H:%M') · up ${uptime_str}${N}"
+echo -e "  ${D}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${N}"
 
 # ── System gauges ────────────────────────────────
 printf "  🧠 ${D}CPU${N}  "; bar "$cpu_total" 20 "usr:${cpu_user}% sys:${cpu_sys}%"; echo ""
